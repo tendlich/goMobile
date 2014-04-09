@@ -1,17 +1,13 @@
 package com.gomobile;
 
-import com.gomobile.R;
+import android.content.Intent;
+import android.os.Bundle;
+
+import com.gomobile.navigation.ViewWithNavigation;
 import com.gomobile.technicalservices.BarcodeScanner;
 import com.gomobile.technicalservices.DataConnectionActivity;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.EditText;
-
-public class Main extends Activity {
+public class Main extends ViewWithNavigation {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +18,30 @@ public class Main extends Activity {
 		startActivity(intent);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-	
-	public void startScanner(View view){
+	public void startScanner() {
 		Intent intent = new Intent(this, BarcodeScanner.class);
-	    startActivity(intent);
+		startActivity(intent);
+	}
+
+	public void navigateRight() {
+		startScanner();
+	}
+
+	@Override
+	public void navigateLeft() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void navigateUp() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void navigateDown() {
+		// TODO Auto-generated method stub
 	}
 
 }

@@ -10,8 +10,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature
@@ -25,15 +25,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.gomobile.technicalservices.DataConnectionActivity"
-            android:label="@string/title_activity_data_connection"
-            android:parentActivityName="com.gomobile.Main" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.gomobile.Main" />
-        </activity>
+        android:theme="@style/Theme.AppCompat.Light" >
         <activity
             android:name="com.gomobile.Main"
             android:label="@string/app_name" >
@@ -49,15 +41,31 @@
             android:parentActivityName="com.gomobile.Main" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.gomobile.Main" />
+                android:value="com.gomobile.Main" />
         </activity>
         <activity
-            android:name="com.gomobile.ShowTechSpecs"
-            android:label="@string/title_activity_show_tech_specs"
+            android:name="com.gomobile.LowDetailView"
+            android:label="@string/title_activity_low_detail_view"
             android:parentActivityName="com.gomobile.technicalservices.BarcodeScanner" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.gomobile.technicalservices.BarcodeScanner" />
+                android:value="com.gomobile.technicalservices.BarcodeScanner" />
+        </activity>
+        <activity
+            android:name="com.gomobile.DetailView"
+            android:label="@string/title_activity_detail_view"
+            android:parentActivityName="com.gomobile.LowDetailView" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gomobile.LowDetailView" />
+        </activity>
+        <activity
+            android:name="com.gomobile.ComparisionView"
+            android:label="@string/title_activity_comparision_view" >
+        </activity>
+        <activity
+            android:name="com.gomobile.technicalservices.DataConnectionActivity"
+            android:label="@string/title_activity_data_connection">
         </activity>
     </application>
 
